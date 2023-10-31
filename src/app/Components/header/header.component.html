@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <h3 style="margin-right: 10px">{{role | titlecase}}</h3>
+          <li class="nav-item active">
+            <a *ngIf="role === 'CLIENT'" routerLink="/addClaim" class="nav-link" aria-current="page" href="#">Add
+              Claim</a>
+          </li>
+          <li class="nav-item active">
+            <a *ngIf="role === 'CLIENT'" routerLink="/userClaims" class="nav-link" aria-current="page" href="#">My
+              Claims</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="role === 'ADMIN'" routerLink="/claims" class="nav-link" href="#">Claims</a>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="logOut()">Log Out</button>
+    </div>
+  </nav>
+  <div class="w-100" style="border-bottom: 2px rgba(96,94,94,0.34) solid"></div>
+</header>

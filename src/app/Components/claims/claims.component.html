@@ -1,0 +1,20 @@
+<table *ngIf="claims.length" class="table container mt-5">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Object</th>
+    <th scope="col">Message</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let claim of claims">
+    <td>{{claim.firstName | titlecase}} {{claim.lastName | titlecase}}</td>
+    <td>{{claim.email}}</td>
+    <td>{{claim.object}}</td>
+    <td>{{claim.message}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<h1 *ngIf="!claims.length" class="d-flex align-items-center justify-content-center w-100 mt-5">No claims available.</h1>
