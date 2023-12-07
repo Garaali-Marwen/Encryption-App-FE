@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres-prod:
     image: postgres:latest
-    container_name: postgres
+    container_name: postgres-prod
     ports:
       - "5432:5432"
     environment:
@@ -16,7 +16,7 @@ services:
 
   encryptionApp-prod:
     image: garaali/encryption_app_be:1.0.0
-    container_name: encryptionApp
+    container_name: encryptionApp-prod
     ports:
       - "8085:8085"
     environment:
@@ -24,7 +24,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=garaali
     depends_on:
-      - postgres
+      - postgres-prod
     networks:
       - app-network
 
@@ -37,7 +37,7 @@ services:
     networks:
       - app-network
     depends_on:
-      - encryptionApp
+      - encryptionApp-prod
 
 volumes:
   postgres_data:
