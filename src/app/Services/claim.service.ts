@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
 })
 export class ClaimService {
 
-  private apiBaseUrl: string = 'http://localhost:8085/api';
+  private apiBaseUrl: string = 'http://192.168.147.129:8085/api';
 
   constructor(private httpClient: HttpClient) {
   }
